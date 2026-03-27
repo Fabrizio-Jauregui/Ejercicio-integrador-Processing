@@ -1,0 +1,35 @@
+
+int xprev = 0;
+int yprev = 0;
+int rx = 0;
+int ry = 0;
+void setup() {
+  size(1400, 1050);
+ 
+}
+
+
+
+void setear_Linea() {
+  stroke(1, 256, 1);
+  strokeWeight(10);
+ 
+}
+
+void imprimoCuatroLineas() {
+  if (mousePressed) {
+
+    line(mouseX, mouseY, xprev, yprev);
+    line(width - mouseX, mouseY, width - xprev, yprev);
+    line(mouseX, height - mouseY, xprev, height - yprev);
+    line(width - mouseX, height - mouseY, width- xprev, height - yprev);
+  }
+
+  xprev = mouseX;
+  yprev = mouseY;
+}
+
+void draw() {
+  setear_Linea();
+  imprimoCuatroLineas();
+}
